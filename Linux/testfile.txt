@@ -1,0 +1,3 @@
+this is a test of awk
+this is a test of sed
+this is a test of text
