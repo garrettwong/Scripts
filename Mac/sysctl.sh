@@ -1,0 +1,1 @@
+systctl -a | grep cpu
