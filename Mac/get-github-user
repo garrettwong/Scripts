@@ -1,0 +1,5 @@
+#!/bin/bash
+# reference secret dropbox to find access token
+
+#https://github.com/settings/tokens - b0f50bb80818336235d5314f6bba6
+curl -u garrettwong:$1 https://api.github.com/user
