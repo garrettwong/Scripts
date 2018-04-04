@@ -1,0 +1,11 @@
+C:\Users\wong_ga\Source\Repos\PrefixFilesWithDate\PrefixFilesWithDate\bin\Debug\netcoreapp2.0\PrefixFilesWithDate.deps.json
+C:\Users\wong_ga\Source\Repos\PrefixFilesWithDate\PrefixFilesWithDate\bin\Debug\netcoreapp2.0\PrefixFilesWithDate.runtimeconfig.json
+C:\Users\wong_ga\Source\Repos\PrefixFilesWithDate\PrefixFilesWithDate\bin\Debug\netcoreapp2.0\PrefixFilesWithDate.runtimeconfig.dev.json
+C:\Users\wong_ga\Source\Repos\PrefixFilesWithDate\PrefixFilesWithDate\bin\Debug\netcoreapp2.0\PrefixFilesWithDate.dll
+C:\Users\wong_ga\Source\Repos\PrefixFilesWithDate\PrefixFilesWithDate\bin\Debug\netcoreapp2.0\PrefixFilesWithDate.pdb
+C:\Users\wong_ga\Source\Repos\PrefixFilesWithDate\PrefixFilesWithDate\obj\Debug\netcoreapp2.0\PrefixFilesWithDate.csprojResolveAssemblyReference.cache
+C:\Users\wong_ga\Source\Repos\PrefixFilesWithDate\PrefixFilesWithDate\obj\Debug\netcoreapp2.0\PrefixFilesWithDate.csproj.CoreCompileInputs.cache
+C:\Users\wong_ga\Source\Repos\PrefixFilesWithDate\PrefixFilesWithDate\obj\Debug\netcoreapp2.0\PrefixFilesWithDate.AssemblyInfoInputs.cache
+C:\Users\wong_ga\Source\Repos\PrefixFilesWithDate\PrefixFilesWithDate\obj\Debug\netcoreapp2.0\PrefixFilesWithDate.AssemblyInfo.cs
+C:\Users\wong_ga\Source\Repos\PrefixFilesWithDate\PrefixFilesWithDate\obj\Debug\netcoreapp2.0\PrefixFilesWithDate.dll
+C:\Users\wong_ga\Source\Repos\PrefixFilesWithDate\PrefixFilesWithDate\obj\Debug\netcoreapp2.0\PrefixFilesWithDate.pdb
