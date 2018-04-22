@@ -1,0 +1,1 @@
+awk '{print}' marks.txt
