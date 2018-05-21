@@ -9,16 +9,49 @@ Usage: ./read_many_args.sh [option...] <set of tests>
 EOF
 }
 
-print_string () {
-    echo $1
+print_num_tests () {
+    # usage: print the number of tests
+    echo $(wc -w <<< $@) tests recognized
+}
+
+print_list () {
+    # usage: print list of arr elements
+    for element in "$@"
+    do
+        echo "$element"
+    done
+}
+
+get_test_files_recursive () {
+    # usage: get_test_files_recursive path_to_tests tests
+    # sets the value of the parameter passed to the list of tests by recursively finding all tests in the passed-in directory
+    TESTS="$(find $1 -type f)"
+    eval "$2='$TESTS'"
 }
 
 run_tests () {
     # usage: run_tests test1 test2 test3 testN
     # runs the list of tests passed in as an argument
-    echo "actually running these: "
-    echo $# tests recognized
-    echo $@
+    tests=''
+    get_test_files_recursive "tests" tests
+
+    echo "Running these tests: "
+
+    print_num_tests $tests
+
+    print_list $tests
+    
+    sh ./print_command_line_args.sh $tests
+}
+
+run_tests_with_array () {
+    # usage: run_tests_with_array takes in an 
+
+    # arrays require expansion
+    array=(abc def ghi)
+    echo "${array[@]}" "A"
+    print_num_tests "${array[@]}"
+    print_list "${array[@]}"
 }
 
 run_include_tests () {
