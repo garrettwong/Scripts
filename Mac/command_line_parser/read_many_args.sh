@@ -32,16 +32,15 @@ get_test_files_recursive () {
 run_tests () {
     # usage: run_tests test1 test2 test3 testN
     # runs the list of tests passed in as an argument
-    tests=''
-    get_test_files_recursive "tests" tests
-
     echo "Running these tests: "
 
-    print_num_tests $tests
+    tests_to_run=$1
 
-    print_list $tests
+    print_num_tests $tests_to_run
+
+    print_list $tests_to_run
     
-    sh ./print_command_line_args.sh $tests
+    sh ./print_command_line_args.sh $tests_to_run
 }
 
 run_tests_with_array () {
@@ -62,8 +61,10 @@ run_include_tests () {
     # remove the --include-tests command line option
     shift
 
-    # $@ is the remaining list of tests that should be included
-    run_tests $@
+    # $@ is the list of tests that should be included
+    tests=$@
+    
+    run_tests "${tests[@]}"
 }
 
 run_exclude_tests () {
@@ -74,9 +75,21 @@ run_exclude_tests () {
     # remove the --exclude-tests command line option
     shift
 
-    # $@ is the remaining list of tests that should be included
-    run_tests $@
+    # get all tests
+    tests=''
+    get_test_files_recursive "tests" tests
+
+    # remove matching tests from tests
+    tests="${tests/$@/}"
+    for var in "$@"
+    do
+        tests="${tests/$var/}"
+    done
+
+    # "${tests[@]}" is the list of filtered tests
+    run_tests "${tests[@]}"
 }
+
 
 # process command line arguments
 if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
@@ -102,5 +115,7 @@ if [[ $# -gt 0 ]]
 
     else
         echo "Running all"
-        run_tests test1
+        tests=''
+        get_test_files_recursive "tests" tests
+        run_tests "${tests[@]}"
 fi
