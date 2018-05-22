@@ -1,0 +1,5 @@
+#!/bin/bash
+
+LS_DIR=$1
+
+find $LS_DIR -type f | tr '\n' ' ' 
