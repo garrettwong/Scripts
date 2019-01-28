@@ -1,5 +1,5 @@
 #!/bin/bash
 
-LS_DIR=$1
+LS_DIR=${1:-"loops"}
 
 find $LS_DIR -type f | tr '\n' ' ' 

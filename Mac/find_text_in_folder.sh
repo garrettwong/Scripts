@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# find text in folder, including only sh files
-TEXT_SEARCH=while
-FILE_TYPE=*.sh
-FOLDER_NAME=loops/
-grep -hnr "$TEXT_SEARCH" --include "$FILE_TYPE" $FOLDER_NAME
+## usage: ./find_text_in_folder.sh "while" "loops/"
 
+SEARCH_TERM=${1:-"while"}
+FOLDER_NAME=${2:-"loops/"}
+
+grep -rnw $FOLDER_NAME -e "$SEARCH_TERM"

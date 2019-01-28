@@ -1,5 +1,8 @@
 #!/bin/bash
-# reference secret dropbox to find access token
+
+## desc: gets the current authenticated github user
+## note: reference secret dropbox to find access token
+## usage: ./get-github-garrettwong-repos.sh
 
 #https://github.com/settings/tokens - b0f50bb80818336235d5314f6bba6
 curl -u garrettwong:$1 https://api.github.com/user

@@ -1,1 +1,5 @@
-systctl -a | grep cpu
+#!/bin/bash
+
+## usage: ./sysctl.sh
+
+sysctl -a | grep cpu
