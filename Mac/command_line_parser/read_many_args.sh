@@ -1,4 +1,9 @@
-#!/bin/bash
+#!/bin/sh
+
+## usage: ./read_many_args.sh
+## description: reads many arguments
+## works on: macOS Monterey
+## fails on:
 
 display_usage() {
     cat << EOF

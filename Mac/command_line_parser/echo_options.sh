@@ -1,6 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
-# sh echo_options.sh --searchpath ~/Git/Scripts/Mac --default -e sh
+## usage: sh echo_options.sh --searchpath ~/Git/garrettwong-Scripts/Mac --default -e sh
+## description: prints and sorts /etc/passwd file
+## works on: macOS Monterey
+## fails on: 
 
 POSITIONAL=()
 while [[ $# -gt 0 ]]
