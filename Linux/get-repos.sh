@@ -1,6 +1,9 @@
 #!/bin/bash
-#Script to get all repositories under a user from bitbucket
-#Usage: getAllRepos.sh [username]
+
+## usage: get-repos.sh [username]
+## descriptiopn: Script to get all repositories under a user from bitbucket
+## works on: 
+## fails on: 
  
 curl --insecure -u ${1} https://api.bitbucket.org/1.0/users/${1} > repoinfo
 # curl -u adomingues https://api.bitbucket.org/1.0/users/adomingues
