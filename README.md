@@ -1,11 +1,8 @@
 # Scripts
 
-Generic scripts sandbox across Windows, Mac OSX and Linux development environments.
+Generic scripts sandbox across OS (Mac, Linux, Windows).
 
-- Windows
-- Mac
-- Linux
-
+Generic scripts for Git, Docker and nodejs.
 
 ## Quick Start
 
