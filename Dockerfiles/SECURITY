@@ -1,0 +1,42 @@
+# https://docs.docker.com/develop/security-best-practices/
+
+# https://www.redhat.com/en/blog/containers-vulnerability-risk-assessment
+
+# https://github.com/microsoft/codeql-container
+rm -rf results/source_db
+export language="python"
+docker run --rm \
+    --name codeql-container \
+    -v /home/user/Scripts:/opt/src \
+    -v /home/user/Scripts/results:/opt/results \
+    -e CODEQL_CLI_ARGS="database create --language=${language} /opt/results/source_db -s /opt/src" \
+    mcr.microsoft.com/cstsectools/codeql-container
+
+docker run --rm \
+    --name codeql-container \
+    -v /home/user/Scripts:/opt/src \
+    -v /home/user/Scripts/results:/opt/results \
+    -e CODEQL_CLI_ARGS=" database upgrade /opt/results/source_db" \
+    mcr.microsoft.com/cstsectools/codeql-container
+
+docker run --rm \
+    --name codeql-container \
+    -v /home/user/Scripts:/opt/src \
+    -v /home/user/Scripts/results:/opt/results \
+    -e CODEQL_CLI_ARGS="database analyze --format=sarif-latest --output=/opt/results/issues.sarif /opt/results/source_db ${language}-security-and-quality.qls" \
+    mcr.microsoft.com/cstsectools/codeql-container
+
+docker run --rm \
+    --name codeql-container \
+    -e CODEQL_CLI_ARGS="resolve qlpacks" \
+    mcr.microsoft.com/cstsectools/codeql-container
+
+docker run --rm \
+    --name codeql-container \
+    -v /home/user/Scripts/results:/opt/results \
+    -e CODEQL_CLI_ARGS="github upload-results --sarif=/opt/results/issues.sarif --repository=garrettwong/Scripts --ref=refs/heads/main --commit e9ee7585525defffc66b2c5d2076d0ea12570968" \
+    -e GITHUB_TOKEN="" \
+    mcr.microsoft.com/cstsectools/codeql-container
+# https://docs.github.com/en/code-security/code-scanning/using-codeql-code-scanning-with-your-existing-ci-system/migrating-from-the-codeql-runner-to-codeql-cli
+
+# https://codeql.github.com/codeql-query-help/python/py-path-injection/
