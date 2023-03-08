@@ -1,0 +1,1 @@
+docker run -t -v .:/Scripts gcr.io/gwc-sandbox/debian12 -c 'curl https://www.google.com'

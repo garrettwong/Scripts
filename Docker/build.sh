@@ -1,0 +1,1 @@
+docker build -f Dockerfiles/Dockerfile.debian12 -t "debian12" .
