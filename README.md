@@ -15,6 +15,21 @@ chmod u+x test_assert.sh
 ./test_assert.sh
 ```
 
+## Configure Environment
+
+Using a Google Cloud Workstation for development.
+
+```bash
+echo "git remote show origin" | sudo tee -a /usr/local/bin/grso
+sudo chmod +x /usr/local/bin/grso
+
+echo "git status" | sudo tee -a /usr/local/bin/gs
+sudo chmod +x /usr/local/bin/gs
+
+echo "git push -u origin" | sudo tee -a /usr/local/bin/gp
+sudo chmod +x /usr/local/bin/gp
+```
+
 ## Licensing
 
-Apache 2.0; see [`LICENSE`](LICENSE) for details.
+See [`LICENSE`](Apache 2.0) for details.

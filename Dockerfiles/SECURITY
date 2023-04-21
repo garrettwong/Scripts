@@ -40,3 +40,15 @@ docker run --rm \
 # https://docs.github.com/en/code-security/code-scanning/using-codeql-code-scanning-with-your-existing-ci-system/migrating-from-the-codeql-runner-to-codeql-cli
 
 # https://codeql.github.com/codeql-query-help/python/py-path-injection/
+
+# https://docs.docker.com/engine/scan/
+# https://hub.docker.com/settings/security
+# docker login -u garrettwong
+# docker scan gcr.io/gwc-sandbox/debian12
+# docker scan --login
+# https://app.snyk.io/org/garrettwong/
+# sudo npm install -g snyk
+# node --version > v16.19.1
+# npm --version > 8.19.3
+# snyk auth
+# https://resources.snyk.io/state-of-open-source-security-report-2022?aliId=eyJpIjoiXC83SHZ3QVhKT2ZGMmgxUkQiLCJ0IjoiMzhXXC9YSmZYNU4rV3VsY25jN2JlYXc9PSJ9#page=1
